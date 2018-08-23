@@ -89,7 +89,11 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/marenab/cjl2oczit56x42rlxm5adlopg', // stylesheet location
    
 });
-
+map.on('load', function() {
+  // make a pointer cursor
+    map.getCanvas().style.cursor = 'default';
+    // set map bounds to Canada
+    map.fitBounds([[-188.0859375, 37.1603165], [-30.5859375, 83.3595113]]);
 map.on('load', function() {
   // the rest of the code will go in here
   var layers = ['1730-10000', '10000-50000', '50000-100000', '100000-150000', '150000+'];
